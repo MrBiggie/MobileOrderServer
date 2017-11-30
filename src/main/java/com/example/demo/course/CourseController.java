@@ -14,7 +14,7 @@ public class CourseController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/topics/{id}/courses")
     public List<Course> getAllCourses(@PathVariable String id) {
-        return courseService.getAllCourses();
+        return courseService.getAllCourses(id);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/topics/{id}/course/{id}")
