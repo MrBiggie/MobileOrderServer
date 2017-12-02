@@ -29,12 +29,12 @@ public class Course {
 
     }
 
-    public Course(String id, String name, String description, String topicId) {
+    public Course(String id, String name, String description, String restaurantId) {
         super();
         this.id = id;
         this.name = name;
         this.description = description;
-        this.restaurant = new restaurant(topicId, "", "");
+        this.restaurant = new restaurant(restaurantId, "", "");
     }
 
     public String getId() {
