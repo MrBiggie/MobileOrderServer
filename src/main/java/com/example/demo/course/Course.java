@@ -1,6 +1,6 @@
 package com.example.demo.course;
 
-import com.example.demo.topic.Topic;
+import com.example.demo.restaurant.restaurant;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,14 +15,14 @@ public class Course {
     private String description;
 
     @ManyToOne
-    private Topic topic;
+    private restaurant restaurant;
 
-    public Topic getTopic() {
-        return topic;
+    public restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setTopic(Topic topic) {
-        this.topic = topic;
+    public void setRestaurant(restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public Course(){
@@ -34,7 +34,7 @@ public class Course {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.topic = new Topic(topicId, "", "");
+        this.restaurant = new restaurant(topicId, "", "");
     }
 
     public String getId() {

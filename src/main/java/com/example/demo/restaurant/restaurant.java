@@ -1,20 +1,21 @@
-package com.example.demo.topic;
+package com.example.demo.restaurant;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Topic {
+public class restaurant {
+
     @Id
     private String id;
     private String name;
     private String description;
 
-    public Topic(){
+    public restaurant(){
 
     }
 
-    public Topic(String id, String name, String description) {
+    public restaurant(String id, String name, String description) {
         super();
         this.id = id;
         this.name = name;
