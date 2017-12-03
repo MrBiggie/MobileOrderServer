@@ -29,7 +29,7 @@ public class Course {
 
     }
 
-    public Course(String id, String name, String description, String restaurantId) {
+    public Course(String id, String name, String description, int restaurantId) {
         super();
         this.id = id;
         this.name = name;
