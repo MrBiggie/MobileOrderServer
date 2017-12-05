@@ -1,6 +1,6 @@
 package com.example.demo.course;
 
-import com.example.demo.restaurant.restaurant;
+import com.example.demo.restaurant.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,13 +24,13 @@ public class CourseController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/restaurants/{restaurantsId}/courses")
     public void addCourse(@RequestBody Course course, @PathVariable int restaurantsId) {
-        course.setRestaurant(new restaurant(restaurantsId, "", ""));
+        course.setRestaurant(new Restaurant(restaurantsId, "", ""));
         courseService.addCourse(course);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/restaurants/{restaurantsId}/courses/{courseId}")
     public void updateTopic(@RequestBody Course course, @PathVariable String courseId, @PathVariable int restaurantsId) {
-        course.setRestaurant(new restaurant(restaurantsId, "", ""));
+        course.setRestaurant(new Restaurant(restaurantsId, "", ""));
         courseService.updateCourse(course);
     }
 

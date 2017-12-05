@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class restaurant {
+public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,11 +14,11 @@ public class restaurant {
     private String name;
     private String description;
 
-    public restaurant(){
+    public Restaurant(){
 
     }
 
-    public restaurant(int id, String name, String description) {
+    public Restaurant(int id, String name, String description) {
         super();
         this.id = id;
         this.name = name;

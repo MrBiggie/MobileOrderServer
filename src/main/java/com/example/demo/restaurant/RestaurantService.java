@@ -13,21 +13,21 @@ public class RestaurantService {
     private RestaurantRepository restaurantRepository;
 
 
-    public List<restaurant> getAllRestaurants() {
-        List<restaurant> restaurants = new ArrayList<>();
+    public List<Restaurant> getAllRestaurants() {
+        List<Restaurant> restaurants = new ArrayList<>();
         restaurantRepository.findAll().forEach(restaurants::add);
         return restaurants;
     }
 
-    public restaurant getRestaurant(String id) {
+    public Restaurant getRestaurant(String id) {
         return restaurantRepository.findOne(id);
     }
 
-    public void addRestaurant(restaurant restaurant) {
+    public void addRestaurant(Restaurant restaurant) {
         restaurantRepository.save(restaurant);
     }
 
-    public void updateRestaurant(String id, restaurant restaurant) {
+    public void updateRestaurant(String id, Restaurant restaurant) {
         restaurantRepository.save(restaurant);
     }
 

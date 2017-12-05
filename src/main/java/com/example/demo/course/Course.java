@@ -1,27 +1,26 @@
 package com.example.demo.course;
 
-import com.example.demo.restaurant.restaurant;
+import com.example.demo.restaurant.Restaurant;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Course {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
     private String description;
 
     @ManyToOne
-    private restaurant restaurant;
+    private Restaurant restaurant;
 
-    public restaurant getRestaurant() {
+    public Restaurant getRestaurant() {
         return restaurant;
     }
 
-    public void setRestaurant(restaurant restaurant) {
+    public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
 
@@ -29,19 +28,19 @@ public class Course {
 
     }
 
-    public Course(String id, String name, String description, int restaurantId) {
+    public Course(int id, String name, String description, int restaurantId) {
         super();
         this.id = id;
         this.name = name;
         this.description = description;
-        this.restaurant = new restaurant(restaurantId, "", "");
+        this.restaurant = new Restaurant(restaurantId, "", "");
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
