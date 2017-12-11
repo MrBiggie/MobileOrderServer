@@ -9,7 +9,7 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private String id;
     private String name;
     private String description;
 
@@ -28,7 +28,7 @@ public class Course {
 
     }
 
-    public Course(int id, String name, String description, int restaurantId) {
+    public Course(String id, String name, String description, String restaurantId) {
         super();
         this.id = id;
         this.name = name;
@@ -36,11 +36,11 @@ public class Course {
         this.restaurant = new Restaurant(restaurantId, "", "");
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -32,4 +32,8 @@ public class BillService {
     public void deleteBill(String id) {
         billRepository.delete(id);
     }
+
+    public List<Bill> getAllBillsByRestaurant(String restaurantId) {
+        return billRepository.findByRestaurantId(restaurantId);
+    }
 }

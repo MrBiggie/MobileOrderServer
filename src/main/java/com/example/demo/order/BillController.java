@@ -35,4 +35,9 @@ public class BillController {
     public void deleteBill(@PathVariable String id) {
         billService.deleteBill(id);
     }
+    @RequestMapping(method = RequestMethod.GET, value = "/restaurants/{restaurantId}/orders")
+    public List<Bill> getAllBillByRestaurant(@PathVariable String restaurantId) {
+        return billService.getAllBillsByRestaurant(restaurantId);
+    }
+
 }

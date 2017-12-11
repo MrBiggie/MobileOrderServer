@@ -10,7 +10,7 @@ public class Bill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private String id;
 
     private int amount;
 
@@ -26,7 +26,7 @@ public class Bill {
 
     }
 
-    public Bill(int id, int amount, int userId, int restaurantId) {
+    public Bill(String id, int amount, String userId, String restaurantId) {
         this.id = id;
         this.amount = amount;
 //        this.courseList = new ArrayList<Course>();
@@ -34,11 +34,11 @@ public class Bill {
         this.user = new User(userId,"","","","","");
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
