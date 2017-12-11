@@ -1,9 +1,7 @@
 package com.example.demo.order;
 
-import com.example.demo.restaurant.Restaurant;
-import com.example.demo.user.User;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Bill {
@@ -13,13 +11,17 @@ public class Bill {
 
     private int amount;
 
+//    @ManyToOne
+//    private User user;
+//
+//    @ManyToOne
+//    private Restaurant restaurant;
+//
+//    @ManyToOne
+//    private Desk desk;
+//
+//    @ManyToMany(mappedBy = "billList")
 //    private List<Course> courseList;
-
-    @ManyToOne
-    private User user;
-
-    @ManyToOne
-    private Restaurant restaurant;
 
     public Bill() {
 
@@ -29,8 +31,8 @@ public class Bill {
         this.id = id;
         this.amount = amount;
 //        this.courseList = new ArrayList<Course>();
-        this.restaurant = new Restaurant(restaurantId, "", "");
-        this.user = new User(userId,"","","","","");
+//        this.restaurant = new Restaurant(restaurantId, "", "");
+//        this.user = new User(userId,"","","","","");
     }
 
     public String getId() {
@@ -49,23 +51,38 @@ public class Bill {
         this.amount = amount;
     }
 
-    public User getUser() {
-        return user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//    public Restaurant getRestaurant() {
+//        return restaurant;
+//    }
+//
+//    public void setRestaurant(Restaurant restaurant) {
+//        this.restaurant = restaurant;
+//    }
+//
+//    public Desk getDesk() {
+//        return desk;
+//    }
+//
+//    public void setDesk(Desk desk) {
+//        this.desk = desk;
+//    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
-
-//    @Override
+//    public List<Course> getCourseList() {
+//        return courseList;
+//    }
+//
+//    public void setCourseList(List<Course> courseList) {
+//        this.courseList = courseList;
+//    }
+    //    @Override
 //    public String toString() {
 //        return "Bill{" +
 //                "courseList=" + courseList +

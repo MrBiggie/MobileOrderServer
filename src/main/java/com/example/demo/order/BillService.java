@@ -11,6 +11,7 @@ public class BillService {
 
     @Autowired
     private BillRepository billRepository;
+
     public List<Bill> getAllBills() {
         List<Bill> bills = new ArrayList<>();
         billRepository.findAll().forEach(bills::add);
@@ -33,7 +34,7 @@ public class BillService {
         billRepository.delete(id);
     }
 
-    public List<Bill> getAllBillsByRestaurant(String restaurantId) {
-        return billRepository.findByRestaurantId(restaurantId);
-    }
+//    public List<Bill> getAllBillsByRestaurant(String restaurantId) {
+//        return billRepository.findByRestaurantId(restaurantId);
+//    }
 }

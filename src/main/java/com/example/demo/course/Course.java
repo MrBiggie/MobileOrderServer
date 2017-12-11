@@ -1,8 +1,10 @@
 package com.example.demo.course;
 
+import com.example.demo.order.Bill;
 import com.example.demo.restaurant.Restaurant;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Course {
@@ -15,15 +17,16 @@ public class Course {
     @ManyToOne
     private Restaurant restaurant;
 
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
+    @ManyToMany
+    @JoinTable(name = "course_bill",
+            joinColumns = @JoinColumn(name = "course_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "bill_id",
+                    referencedColumnName = "id"))
+    private List<Bill> billList;
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
 
-    public Course(){
+    public Course() {
 
     }
 
@@ -59,5 +62,12 @@ public class Course {
         this.description = description;
     }
 
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
 
 }

@@ -11,33 +11,33 @@ public class BillController {
     @Autowired
     private BillService billService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/orders")
+    @RequestMapping(method = RequestMethod.GET, value = "/bills")
     public List<Bill> getAllBill() {
         return billService.getAllBills();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/orders/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/bills/{id}")
     public Bill getBill(@PathVariable String id) {
         return billService.getBill(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/orders")
+    @RequestMapping(method = RequestMethod.POST, value = "/bills")
     public void addBill(@RequestBody Bill bill) {
         billService.addBill(bill);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/orders/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/bills/{id}")
     public void updateBill(@RequestBody Bill bill, @PathVariable String id) {
         billService.updateBill(id, bill);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/orders/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/bills/{id}")
     public void deleteBill(@PathVariable String id) {
         billService.deleteBill(id);
     }
-    @RequestMapping(method = RequestMethod.GET, value = "/restaurants/{restaurantId}/orders")
-    public List<Bill> getAllBillByRestaurant(@PathVariable String restaurantId) {
-        return billService.getAllBillsByRestaurant(restaurantId);
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/restaurants/{restaurantId}/bills")
+//    public List<Bill> getAllBillByRestaurant(@PathVariable String restaurantId) {
+//        return billService.getAllBillsByRestaurant(restaurantId);
+//    }
 
 }
