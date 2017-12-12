@@ -2,6 +2,7 @@ package com.example.demo.desk;
 
 import com.example.demo.order.Bill;
 import com.example.demo.restaurant.Restaurant;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,8 +18,8 @@ public class Desk {
 
     @OneToMany
     @JoinColumn(name = "desk_id")
+    @JsonManagedReference
     private List<Bill> bills;
-
 
     public Desk() {
 

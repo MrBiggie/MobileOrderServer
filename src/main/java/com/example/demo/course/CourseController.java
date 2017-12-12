@@ -1,6 +1,5 @@
 package com.example.demo.course;
 
-import com.example.demo.order.BillService;
 import com.example.demo.restaurant.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,6 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
-    private BillService billService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/restaurants/{restaurantsId}/courses")
     public List<Course> getAllCourses(@PathVariable String restaurantsId) {

@@ -17,14 +17,8 @@ public class Course {
     @ManyToOne
     private Restaurant restaurant;
 
-    @ManyToMany
-    @JoinTable(name = "course_bill",
-            joinColumns = @JoinColumn(name = "course_id",
-                    referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "bill_id",
-                    referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "courseList")
     private List<Bill> billList;
-
 
     public Course() {
 
